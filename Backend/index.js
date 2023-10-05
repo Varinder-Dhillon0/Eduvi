@@ -16,7 +16,7 @@ const Course = require('./Model/Course');
 require("dotenv").config({ path: "./.env" });
 
 const corsOptions = {
-    origin: 'http://eduvi-alpha.vercel.app',
+    origin: 'https://eduvi-alpha.vercel.app',
     credentials: true,            //access-control-allow-credentials:true
     optionSuccessStatus: 200
 }
@@ -64,7 +64,7 @@ const verifyToken = (token) => {
 
 const sendVerification = async ({ _id, email }, res) => {
 
-    const currentURL = "http://eduvi.up.railway.app/"
+    const currentURL = "https://eduvi.up.railway.app/"
 
     const uniqueString = uuidv4() + _id;
     const mailOptions = {
