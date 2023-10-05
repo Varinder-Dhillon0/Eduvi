@@ -16,7 +16,7 @@ const Course = require('./Model/Course');
 require("dotenv").config({ path: "./.env" });
 
 app.use(cors({
-  origin: "https://eduvi-alpha.vercel.app",
+  origin: "*",
   credentials: true,
 }));
 
