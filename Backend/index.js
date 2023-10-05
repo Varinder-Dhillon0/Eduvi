@@ -21,6 +21,13 @@ app.use(express.urlencoded({ extended: true }));
 
 db();
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://eduvi-alpha.vercel.app");
+  res.header("Access-Control-Allow-Credentials", true);
+  next();
+});
+
+
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -55,11 +62,6 @@ const verifyToken = (token) => {
     });
 };
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://eduvi-alpha.vercel.app");
-  res.header("Access-Control-Allow-Credentials", true);
-  next();
-});
 
 
 const sendVerification = async ({ _id, email }, res) => {
