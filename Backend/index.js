@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const db = require('./db');
-const cors = require('cors')
 const UserModel = require("./Model/User");
 const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken");
@@ -15,20 +14,16 @@ const Course = require('./Model/Course');
 
 require("dotenv").config({ path: "./.env" });
 
-app.use(cors({
-  origin : "https://eduvi-alpha.vercel.app"
-}));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true });
 
 db();
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "https://eduvi-alpha.vercel.app");
   res.header("Access-Control-Allow-Credentials", true);
   next();
 });
-
 
 const transporter = nodemailer.createTransport({
     service: "gmail",
