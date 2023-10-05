@@ -678,6 +678,8 @@ app.get("/search/:key", async (req, res) => {
     }).catch(err => { console.log(err) });
 })
 
-app.listen(5000, () => {
+const port = process.env.PORT || 3000;
+
+app.listen(port, "0.0.0.0" ,() => {
     console.log("listening at port", 5000);
 })
