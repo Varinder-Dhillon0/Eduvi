@@ -13,7 +13,6 @@ export default function UserDashboard() {
     const { email } = useContext(MyContext);
     const navigate = useNavigate();
     const [nocourse, setnocourse] = useState(false);
-    
 
     const { data: Courses, isLoading } = useQuery([email], async () => {
     try {
@@ -47,7 +46,7 @@ export default function UserDashboard() {
                     })}
                 </div>}
             </div>
-            {nocourse && <div style={{marginBottom : "170px"}}>You need to register first.</div>}
+            {nocourse && <div style={{marginBottom : "170px", marginLeft : "200px"}}>You need to register first.</div>}
             
         </div>
     )
