@@ -54,7 +54,7 @@ export default function Login({Loginstate,setLoginstate}) {
           return;
         }
     
-        const sendUser = axios.post("http://localhost:5000/SignUp", {
+        const sendUser = axios.post("http://eduvi.up.railway.app/SignUp", {
     
           name: name,
           email: email,
@@ -105,7 +105,7 @@ export default function Login({Loginstate,setLoginstate}) {
       return;
     }
 
-    const login = axios.post("http://localhost:5000/signin", {
+    const login = axios.post("http://eduvi.up.railway.app/signin", {
       email : email,
       password : password
     }).then((res) =>{

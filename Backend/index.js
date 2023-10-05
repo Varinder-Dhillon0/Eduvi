@@ -16,7 +16,7 @@ const Course = require('./Model/Course');
 require("dotenv").config({ path: "./.env" });
 
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'http://eduvi-alpha.vercel.app',
     credentials: true,            //access-control-allow-credentials:true
     optionSuccessStatus: 200
 }
@@ -64,7 +64,7 @@ const verifyToken = (token) => {
 
 const sendVerification = async ({ _id, email }, res) => {
 
-    const currentURL = "http://localhost:5000/"
+    const currentURL = "http://eduvi.up.railway.app/"
 
     const uniqueString = uuidv4() + _id;
     const mailOptions = {
@@ -333,7 +333,7 @@ app.get("/user/verify/:userId/:uniqueString", (req, res) => {
                         .deleteOne({ userId })
                         .then(result => {
                             UserModel.deleteOne({ _id: userId }).then(() => {
-                                res.redirect("http://localhost:3000/verified/expired")
+                                res.redirect("http://eduvi-alpha.vercel.app/verified/expired")
                             });
                         })
                         .catch((err) => {
@@ -347,18 +347,18 @@ app.get("/user/verify/:userId/:uniqueString", (req, res) => {
                             UserModel.updateOne({ _id: userId }, { verified: true }).then(() => {
                                 UserVerification.deleteOne({ userId }).then(
                                     //here i can redirect user to particular page
-                                    res.redirect("http://localhost:3000/verified/success")
+                                    res.redirect("http://eduvi-alpha.vercel.app/verified/success")
                                 )
                             })
                         } else {
-                            res.redirect("http://localhost:3000/verified/error")
+                            res.redirect("http://eduvi-alpha.vercel.app/verified/error")
                         }
                     }).catch(error => {
                         console.log(error);
                     })
                 }
             } else {
-                res.redirect("http://localhost:3000/verified/error")
+                res.redirect("http://eduvi-alpha.vercel.app/verified/error")
             }
         }
         )
@@ -467,11 +467,11 @@ app.post("/paymentverification", async (req, res) => {
         });
 
         //redirecting to success payment page with payment_id
-        res.redirect(`http://localhost:3000/payment/success/${razorpay_payment_id}`);
+        res.redirect(`http://eduvi-alpha.vercel.app/payment/success/${razorpay_payment_id}`);
     } else {
 
         //if not matched we will give error
-        res.send(`http://localhost:3000/payment/error/anerroroccured`)
+        res.send(`http://eduvi-alpha.vercel.app/payment/error/anerroroccured`)
     }
 })
 

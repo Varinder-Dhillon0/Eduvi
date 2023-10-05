@@ -12,7 +12,7 @@ export default function Revenue({email , name}) {
         
 
         axios
-            .post("http://localhost:5000/getStats", {
+            .post("http://eduvi.up.railway.app/getStats", {
                 email: email,
             })
             .then((res) => {

@@ -15,7 +15,7 @@ export default function CourseDash(){
 
     const {data : course, isLoading} = useQuery([email], async() =>{
         try{
-            const result = await axios.post("http://localhost:5000/getUserCourse",{
+            const result = await axios.post("http://eduvi.up.railway.app/getUserCourse",{
                 email : email,
                 courseId : params.id 
             });

@@ -18,7 +18,7 @@ export default function CourseDetails() {
     console.log(params)
 
     useEffect(() => {
-        axios.post("http://localhost:5000/getCourse", {
+        axios.post("http://eduvi.up.railway.app/getCourse", {
             id: params.id
         }).then(result => {
             console.log(result);
@@ -34,10 +34,10 @@ export default function CourseDetails() {
             setprocess(true);
 
             //getting razorpay key from server
-            const { data: { key } } = await axios.get("http://localhost:5000/getKey");
+            const { data: { key } } = await axios.get("http://eduvi.up.railway.app/getKey");
 
             //posting server with amount 
-            const { data: { order } } = await axios.post("http://localhost:5000/checkout", {
+            const { data: { order } } = await axios.post("http://eduvi.up.railway.app/checkout", {
                 amount: price
             })
 
@@ -51,7 +51,7 @@ export default function CourseDetails() {
                 description: `Paying for ${course.title}`,
                 image: course.background,
                 order_id: order.id,
-                callback_url: `http://localhost:5000/paymentverification?token=${token}&id=${params.id}`,
+                callback_url: `http://eduvi.up.railway.app/paymentverification?token=${token}&id=${params.id}`,
                 notes: {
                     address: "Eduvi Company"
                 },

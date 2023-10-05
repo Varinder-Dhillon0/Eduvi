@@ -18,7 +18,7 @@ export default function UserDashboard() {
     const { data: Courses, isLoading } = useQuery([email], async () => {
     try {
         if(email !== ""){
-            const result = await axios.post("http://localhost:5000/userCourses", { email: email });
+            const result = await axios.post("http://eduvi.up.railway.app/userCourses", { email: email });
             setnocourse(false);
             return result.data.courses;
         }else{
