@@ -25,15 +25,6 @@ app.use(express.urlencoded({ extended: true });
 
 db();
 
-// Your other routes and middleware
-
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://eduvi-alpha.vercel.app");
-  res.header("Access-Control-Allow-Credentials", true);
-  next();
-});
-
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
