@@ -100,7 +100,7 @@ export default function Upload({name,email}) {
 
         const content = getContent();
 
-        const upload = axios.post("http://localhost:5000/uploadcourse", {
+        const upload = axios.post("https://eduvi.up.railway.app/uploadcourse", {
             title,
             desc,
             background,

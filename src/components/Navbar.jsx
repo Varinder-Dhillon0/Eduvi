@@ -29,7 +29,7 @@ export default function Navbar({name,setname,setemail}) {
     useEffect(() => {
         if (cookies.get("token")) {
             const { token } = cookies.get("token");
-            axios.post("http://eduvi.up.railway.app/verifyToken", {
+            axios.post("https://eduvi.up.railway.app/verifyToken", {
                 token: token
             }).then((res) => {
                 if (res.data === false) {

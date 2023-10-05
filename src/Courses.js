@@ -16,7 +16,7 @@ export default function Courses() {
     const [searchres, setsearchres] = useState();
 
     const { data: courses, isLoading } = useQuery([page, email], () =>
-        axios.post("http://eduvi.up.railway.app/getCourses", { email: email, skip: (page - 1) * 9 })
+        axios.post("https://eduvi.up.railway.app/getCourses", { email: email, skip: (page - 1) * 9 })
             .then(result => {
                 // return the courses and the total number 
                 settotaldocs(result.data.total);
@@ -25,7 +25,7 @@ export default function Courses() {
 
     const searchParam = (key) =>{
         search &&
-        axios.get(`http://eduvi.up.railway.app/search/${key}`)
+        axios.get(`https://eduvi.up.railway.app/search/${key}`)
             .then(result =>{
                 setsearchres(result.data);
             })

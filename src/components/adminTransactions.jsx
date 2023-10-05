@@ -18,7 +18,7 @@ export default function Transactions() {
     useEffect(() => {
 
         axios
-            .get("http://eduvi.up.railway.app/getTransactions")
+            .get("https://eduvi.up.railway.app/getTransactions")
             .then(res => {
                 setTransactions(res.data.splice(5, res.data.length));
                 setlimitedtransactions(res.data.splice(0, 5))

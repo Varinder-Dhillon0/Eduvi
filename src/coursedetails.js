@@ -18,7 +18,7 @@ export default function CourseDetails() {
     console.log(params)
 
     useEffect(() => {
-        axios.post("http://eduvi.up.railway.app/getCourse", {
+        axios.post("https://eduvi.up.railway.app/getCourse", {
             id: params.id
         }).then(result => {
             console.log(result);
@@ -34,10 +34,10 @@ export default function CourseDetails() {
             setprocess(true);
 
             //getting razorpay key from server
-            const { data: { key } } = await axios.get("http://eduvi.up.railway.app/getKey");
+            const { data: { key } } = await axios.get("https://eduvi.up.railway.app/getKey");
 
             //posting server with amount 
-            const { data: { order } } = await axios.post("http://eduvi.up.railway.app/checkout", {
+            const { data: { order } } = await axios.post("https://eduvi.up.railway.app/checkout", {
                 amount: price
             })
 
@@ -51,7 +51,7 @@ export default function CourseDetails() {
                 description: `Paying for ${course.title}`,
                 image: course.background,
                 order_id: order.id,
-                callback_url: `http://eduvi.up.railway.app/paymentverification?token=${token}&id=${params.id}`,
+                callback_url: `https://eduvi.up.railway.app/paymentverification?token=${token}&id=${params.id}`,
                 notes: {
                     address: "Eduvi Company"
                 },
@@ -88,13 +88,13 @@ export default function CourseDetails() {
                             <p>{course?.desc}</p>
                             <div className="more">
                                 <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none">
+                                    <svg xmlns="https://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M6.15407 7.30116C7.52877 5.59304 9.63674 4.5 12 4.5C12.365 4.5 12.7238 4.52607 13.0748 4.57644L13.7126 5.85192L11.2716 8.2929L8.6466 8.6679L7.36009 9.95441L6.15407 7.30116ZM5.2011 8.82954C4.75126 9.79256 4.5 10.8669 4.5 12C4.5 15.6945 7.17133 18.7651 10.6878 19.3856L11.0989 18.7195L8.8147 15.547L10.3741 13.5256L9.63268 13.1549L6.94027 13.6036L6.41366 11.4972L5.2011 8.82954ZM7.95559 11.4802L8.05962 11.8964L9.86722 11.5951L11.3726 12.3478L14.0824 11.9714L18.9544 14.8135C19.3063 13.9447 19.5 12.995 19.5 12C19.5 8.93729 17.6642 6.30336 15.033 5.13856L15.5377 6.1481L11.9787 9.70711L9.35371 10.0821L7.95559 11.4802ZM18.2539 16.1414C16.9774 18.0652 14.8369 19.366 12.3859 19.4902L12.9011 18.6555L10.6853 15.578L12.0853 13.7632L13.7748 13.5286L18.2539 16.1414ZM12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3Z" fill="#ffff" />
                                     </svg>
                                     <p>{course?.language}</p>
                                 </div>
                                 <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="-0.5 0 21 21" version="1.1">
+                                    <svg xmlns="https://www.w3.org/2000/svg" width="15px" height="15px" viewBox="-0.5 0 21 21" version="1.1">
                                         <title>content / 34 - content, book, brochure, magazine, read icon</title>
                                         <g id="Free-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
                                             <g transform="translate(-155.000000, -451.000000)" id="Group" stroke="#ffff" stroke-width="2">
@@ -156,7 +156,7 @@ export default function CourseDetails() {
                         <p>{course?.prerequisites.replace(/^/gm, '✔ ')}</p>
                         <h1>Contact Instructor</h1>
                         <div className="instructor">
-                            <img src="https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1-744x744.jpg" alt={course?.creator}/>
+                            <img src="httpss://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1-744x744.jpg" alt={course?.creator}/>
                             <div>
                                 <h2>{course?.creator}</h2>
                                 <p>{course?.email}</p>

@@ -15,7 +15,7 @@ export default function AdminDashboard({ children }) {
     useEffect(() => {
         if (cookies.get("token")) {
             const { token } = cookies.get("token");
-            axios.post("http://eduvi.up.railway.app/checkAdmin", {
+            axios.post("https://eduvi.up.railway.app/checkAdmin", {
                 token: token
             }).then((res) => {
                 if (res.data === false) {
