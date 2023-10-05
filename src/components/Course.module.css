@@ -1,0 +1,51 @@
+
+.course{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    backdrop-filter: drop-shadow();
+    height: 390px;
+}
+
+.course:hover{
+    scale: 1.05;
+}
+
+.courseImg{
+    height: 163px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.course img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.course h2{
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: var(--medium-font);
+    color: var(--text-primary-color);
+}
+
+.course p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--text-secondary-color);
+}
+
+.course h3{
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.course h4{
+    margin-bottom: 10px;
+    font-weight: 700;
+}

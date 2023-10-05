@@ -1,0 +1,41 @@
+
+.footer{
+    height: 150px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.companyInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo p{
+    margin-left: 5px;
+    font-weight: 700;
+    font-size: var(--medium-font);
+}
+
+.links{display: flex;
+    width: 200px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.links a{
+    padding: 10px;
+    border-radius: 130px;
+    transition: 0.3s all ease-in-out;
+}
+
+.links a:hover{
+    background-color: var(--primary-color);
+}

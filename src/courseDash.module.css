@@ -1,0 +1,46 @@
+
+.courseDashwrap{
+    width: 100vw;
+    margin-left: 100px;
+    margin-top: 142px;
+    margin-bottom: 91px;
+    display: flex;
+}
+
+.courseOverview{
+    width: 30%;
+    padding: 2px;
+}
+
+.courseOverview h1{
+    background-color : rgba(123, 123, 123, 0.281);
+    font-size: 18px;
+    padding: 10px;
+    font-weight: 700;
+}
+
+.videowrap{
+    display: flex;
+    align-items: center;
+}
+
+.courseOverview p{
+    font-size: 14px;
+    padding: 5px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.coursevideo{
+    width: 58%;
+    margin-left: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coursevideo iframe{
+    width: 827px;
+    height: 463px;
+
+}

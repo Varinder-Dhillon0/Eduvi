@@ -1,0 +1,54 @@
+.navbarWrapper{
+    background-color: rgba(255, 255, 255, 0.781);
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    top: 0;
+}
+
+.navbar{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 100px;
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+    font-size: var(--large-font);
+    align-items: center;
+    width: 150px;
+    cursor: pointer;
+}
+
+.logo p{
+    margin-left: 5px;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.menu button{
+    background : none;
+    border: 0px;
+    font-size: var(--small-font);
+}
+
+.account{
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+}
+
+.account button{
+    display: flex;
+    background: none;
+    align-items: center;
+    border: 0;
+}
